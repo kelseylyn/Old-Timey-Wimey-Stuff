@@ -5,7 +5,7 @@ $('button.camera-control').click(function(){
 	if(navigator.camera){
 		var options={
 		quality:60,
-		destinationType: Camera.DestinationType.DATAQ_URL,
+		destinationType: Camera.DestinationType.DATA_URL,
 		sourceType:1,
 		encodingType: 0
 		};
