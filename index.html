@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Camera Demo!</title>
+    </head>
+    <body>
+        <h1>Camera Demo!</h1>
+
+        <div id="camera">
+            <button class="camera-control">
+                Capture Photo
+            </button>
+ 
+            <div style="text-align:center;margin:20px;">
+                <img id="camera-photo" src="" style="width:auto;height:120px;" />
+            </div>
+        </div>
+
+
+        <div id="pics-taken"></div>
+        <ul id="error-output" style="color: red"></ul>
+
+        <script src="phonegap.js"></script>
+        <script src="js/modernizr.dev.min.js"></script>
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
