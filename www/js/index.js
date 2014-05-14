@@ -26,4 +26,6 @@ function getPosition (position){
 	$('#longitude').html('Long:' + longitude);
 	$('#latitude').html('Lat:'+ latitude);
 }
-
+function positionError (error) {
+	$('#error-output').html(error.message);
+}
