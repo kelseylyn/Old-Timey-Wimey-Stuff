@@ -20,7 +20,7 @@ function getPhoto(data){
 	$('#camera-photo').attr('src',"data:image/jpeg;base64," + data);
 }
 function getPosition (position){
-	var longitube = position.coords.longitude;
+	var longitude = position.coords.longitude;
 	var latitude = position.coords.latitude;
 	
 	$('#longitude').html('Long:' + longitude);
