@@ -11,6 +11,7 @@ $('button.camera-control').click(function(){
 		};
 	
 		navigator.camera.getPicture(getPhoto, null, options);
+		navigator.geolocation.getCurrentPosition(getPosition,null,{enableHighAccuracy: true});
 	}
 
 });
@@ -18,3 +19,11 @@ $('button.camera-control').click(function(){
 function getPhoto(data){
 	$('#camera-photo').attr('src',"data:image/jpeg;base64," + data);
 }
+function getPosition (position){
+	var longitube = position.coords.longitude;
+	var latitude = position.coords.latitude;
+	
+	$('#longitude').html('Long:' + longitude);
+	$('#latitude').html('Lat:'+ latitude);
+}
+
