@@ -17,3 +17,12 @@ html {
 	background-size: 100% 100%;
 	padding: 15px;
 }
+
+/*div {
+	border: 1px solid black;
+}*/
+
+.viewlink {
+	display: inline;
+	padding-right: 10px;
+}

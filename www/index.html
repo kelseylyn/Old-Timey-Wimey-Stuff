@@ -6,8 +6,20 @@
     </head>
     <body>
         <div class="main">
-        <h1>Camera Demo!</h1>
+        <h1>Old Timey Wimey Stuff</h1>
 
+        <ul>
+            <li class="viewlink">Home</li>
+            <li class="viewlink">Capture</li>
+            <li class="viewlink">Edit</li>
+        </ul>
+
+        <!-- VIEW FOR DISPLAYING A LIST OF ALL PHOTOS -->
+        <div id="showall">
+            Here are all of the pictures that have been taken
+        </div>
+
+        <!-- VIEW FOR CAPTURING NEW PICTURES-->
         <div id="camera">
             <button class="camera-control">
                 Capture Photo
@@ -19,6 +31,19 @@
             
             <div id="longitude">Long:</div>
             <div id="latitude">Lat:</div>
+
+            Description:
+            <textarea id="description" cols="50" rows="5">
+            </textarea>
+
+            <button class="save">
+                Save
+            </button>
+        </div>
+
+        <!-- VIEW FOR EDITING OLD PICTURES -->
+        <div id="edit">
+            Here is the place to edit old pictures.
         </div>
 
 
