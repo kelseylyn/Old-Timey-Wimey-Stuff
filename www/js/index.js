@@ -18,13 +18,16 @@ function loadAllPhotos() {
 }
 
 function makePhotoEntry() {
-	var imageData = $('#camera-photo').attr('src').replace("data:image/jpeg;base64,", "");
-	var longitude = $('#longitude').html();
-	var latitude = $('#latitude').html();
+	// var imageData = $('#camera-photo').attr('src').replace("data:image/jpeg;base64,", "");
+	var imageData = $('#camera-photo').attr('src');
+	var imagePath = $('#image-path').html();
+	var longitude = $('#longitude').html().replace('Long: ', ''); //MAY 20
+	var latitude = $('#latitude').html().replace('Lat: ', ''); //MAY 20
 	var description = $('#description').val();
 
 	var photoEntry = {
 		"image" : imageData,
+		"imagepath": imagepath,
 		"longitude" : longitude,
 		"latitude" : latitude,
 		"description" : description
@@ -65,11 +68,11 @@ $('li.viewlink').click(function() {
 
 $('button.camera-control').click(function(){
 	//navigator is PhoneGap access to hardware
-	if(navigator.camera){
-		var options={
-		quality:60,
-		destinationType: Camera.DestinationType.DATA_URL,
-		sourceType:1,
+	if(navigator.camera) {
+		var options = {
+		quality: 60,
+		destinationType: Camera.DestinationType.FILE_URI,
+		sourceType: 1,
 		encodingType: 0
 		};
 	
@@ -78,8 +81,9 @@ $('button.camera-control').click(function(){
 	}
 });
 
-function getPhoto(data){
-	$('#camera-photo').attr('src',"data:image/jpeg;base64," + data);
+function getPhoto(imageURI){
+	$('#camera-photo').attr('src', imageURI);
+	window.resolveLocalFileSystemURI(imageURI, resolveOnSuccess, resolveOnError);
 }
 function getPosition (position){
 	var longitude = position.coords.longitude;
@@ -90,4 +94,29 @@ function getPosition (position){
 }
 function positionError (error) {
 	$('#error-output').html(error.message);
+}
+
+function resolveOnError(error) {
+	// do nothing for now
+}
+
+function resolveOnSuccess(entry) {
+	var now = new Date();
+	var timestamp = now.getTime();
+	var photoName = timestamp + ".jpg";
+	var photoFolder = "Timey_Wimey_Stuff";
+
+	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, 
+		function(fileSystem) {
+			fileSystem.root.getDirectory(photoFolder, {create: true, exclusive: false},
+				function(directory) {
+					entry.moveTo(directory, photoName, successMove, resolveOnError);
+				}
+				resolveOnError);
+		},
+		resolveOnError);
+}
+
+function successMove(entry) {
+	$('#image-path').html(entry.fullPath);
 }
