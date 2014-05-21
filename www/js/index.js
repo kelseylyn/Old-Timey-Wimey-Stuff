@@ -111,7 +111,7 @@ function resolveOnSuccess(entry) {
 			fileSystem.root.getDirectory(photoFolder, {create: true, exclusive: false},
 				function(directory) {
 					entry.moveTo(directory, photoName, successMove, resolveOnError);
-				}
+				},
 				resolveOnError);
 		},
 		resolveOnError);
