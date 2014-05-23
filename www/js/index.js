@@ -54,9 +54,9 @@ function saveAllPhotosAfterEdit () {
 }
 
 $('button.save').click(function() {
-	clearNewView();
 	makePhotoEntry();
 	saveAllPhotos();
+	clearNewView();
 	populateList();
 	populateEditList();
 });
