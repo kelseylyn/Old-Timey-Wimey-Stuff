@@ -16,7 +16,21 @@
 
         <!-- VIEW FOR DISPLAYING A LIST OF ALL PHOTOS -->
         <div id="showall">
-            Here are all of the pictures that have been taken
+            <ul>
+            </ul>
+
+            <div style="text-align:center;margin:20px;">
+                <img class="fullview" id="camera-photo-view" src="" />
+                <span id="image-path-view"></span>
+            </div>
+
+            Long: <span id="longitude-view"></span>
+            Lat: <span id="latitude-view"></span>
+
+            Description:
+            <p id="description-view"></p>
+
+            <span id="index-view" style="visibility: hidden"></span>
         </div>
 
         <!-- VIEW FOR CAPTURING NEW PICTURES-->
@@ -26,15 +40,15 @@
             </button>
  
             <div style="text-align:center;margin:20px;">
-                <img id="camera-photo" src="" style="width:auto;height:120px;" />
+                <img class="fullview" id="camera-photo" src="" style="width:auto;height:120px;" />
                 <span id="image-path"></span>
             </div>
             
-            <div id="longitude">Long:</div>
-            <div id="latitude">Lat:</div>
+            Long:<span id="longitude"></span>
+            Lat:<span id="latitude"></span>
 
             Description:
-            <textarea id="description" cols="50" rows="5">
+            <textarea id="description" placeholder="Enter a description here" cols="50" rows="5">
             </textarea>
 
             <button class="save">
@@ -44,28 +58,27 @@
 
         <!-- VIEW FOR EDITING OLD PICTURES -->
         <div id="edit">
-            Here is the place to edit old pictures.
+            <ul>
+            </ul>
 
             <div style="text-align:center;margin:20px;">
-                <img id="camera-photo-edit" src="" style="width:auto;height:120px;" />
-                <span id="image-path-edit"></span>
+                <img class="fullview" id="camera-photo-edit" src="" />
+                <span id="image-path-edit" style="visibility:hidden"></span>
             </div>
 
-            <div id="longitude">Long:</div>
-            <div id="latitude">Lat:</div>
+            Long:<input id="longitude-edit" value="" />
+            Lat:<input id="latitude-edit" value="" />
 
             Description:
-            <textarea id="description-edit" cols="50" rows="5">
+            <textarea name="description-edit" id="description-edit" cols="50" rows="5">
             </textarea>
+
+            <span id="index-edit" style="visibility: hidden"></span>
 
             <button class="save">
                 Save
             </button>
         </div>
-
-
-        <div id="pics-taken"></div>
-        <ul id="error-output" style="color: red"></ul>
 
         <script src="phonegap.js"></script>
         <script src="js/modernizr.dev.min.js"></script>
