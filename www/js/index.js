@@ -24,7 +24,7 @@ function makePhotoEntry() {
 
 	var photoEntry = {
 		"imageData" : imageData,
-		"imagePath": imagepath,
+		"imagePath": imagePath,
 		"longitude" : longitude,
 		"latitude" : latitude,
 		"description" : description
@@ -173,6 +173,16 @@ $("button.save-edit").click(function () {
 
 	saveAllPhotosAfterEdit();
 });
+
+function saveAllPhotosAfterEdit () {
+	localStorage.clear();
+	localStorage["photos"] = JSON.stringify(photos);
+	if (navigator.notification) {
+		navigator.notification.alert("Changes have been saved", null, "Success!", "OK");
+	} else {
+		alert("Changes have been saved");
+	}
+}
 
 $('button.camera-control').click(function () {
     // navigator is PhoneGap access to hardware
