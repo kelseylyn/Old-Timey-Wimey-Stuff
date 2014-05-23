@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width; initial-scale=1; user-scalable=no;">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Camera Demo!</title>
     </head>
@@ -43,13 +44,16 @@
                 <img class="fullview" id="camera-photo" src="" style="width:auto;height:120px;" />
                 <span id="image-path" style="visibility: hidden"></span>
             </div>
-            
-            Long:<span id="longitude"></span>
-            Lat:<span id="latitude"></span>
-
-            Description:
-            <textarea id="description" placeholder="Enter a description here" cols="50" rows="5"></textarea>
-
+            <p class="local">
+                Long:<span id="longitude"></span>
+            </p>
+            <p class="local">
+                Lat:<span id="latitude"></span>
+            </p>
+            <p class="local">
+                Description:
+                <textarea id="description" placeholder="Enter a description here" cols="50" rows="5"></textarea>
+            </p>
             <button class="save">
                 Save
             </button>

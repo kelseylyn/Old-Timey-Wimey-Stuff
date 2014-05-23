@@ -1,3 +1,15 @@
+@media (max-device-width: 1080px) and (orientation: landscape) { 
+	.main {
+		height: 1300px;
+	}
+}
+
+@media (max-device-width: 800px) and (orientation: portrait) { 
+	.main {
+		height: 1200px;
+	}
+}
+
 html {
 	background-image: url(../img/map.jpg);
 	background-position: center center;
@@ -12,10 +24,11 @@ html {
 	margin: 0 auto;
 	position: relative;
 	width: 90%;
-	height: 100%;
+	max-height: 100%;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	padding: 15px;
+	opacity: 0.85;
 }
 
 /*div {
@@ -29,14 +42,20 @@ html {
 
 img.thumbnail {
 	width: auto;
-  	max-width: 75px;
+  	max-width: 150px;
   	height: auto;
-  	max-height: 50px;
 }
 
 img.fullview {
 	width: auto;
-  	max-width: 150px;
+  	max-width: 350px;
   	height: auto;
-  	max-height: 100px;
+}
+
+.showall ul {
+	list-style: none;
+}
+
+.local {
+	margin-bottom: 10px;
 }
