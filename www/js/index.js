@@ -35,7 +35,7 @@ function makePhotoEntry() {
 
 function saveAllPhotos() {
 	localStorage.clear();
-	localStorage["photos"] = JSON.stringigy(photos);
+	localStorage["photos"] = JSON.stringify(photos);
 	if(navigator.notification) {
 		navigator.notification.alert("Photo has been saved", null, "Success!", "OK");
 	} else {
