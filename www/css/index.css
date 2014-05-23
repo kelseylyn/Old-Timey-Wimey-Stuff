@@ -1,4 +1,4 @@
-@media (max-device-width: 1080px) and (orientation: landscape) { 
+/*@media (max-device-width: 1080px) and (orientation: landscape) { 
 	.main {
 		height: 1300px;
 	}
@@ -8,7 +8,7 @@
 	.main {
 		height: 1200px;
 	}
-}
+}*/
 
 html {
 	background-image: url(../img/map.jpg);
@@ -24,7 +24,8 @@ html {
 	margin: 0 auto;
 	position: relative;
 	width: 90%;
-	max-height: 100%;
+	max-height: 1300px;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	padding: 15px;
