@@ -53,8 +53,9 @@ img.fullview {
   	height: auto;
 }
 
-.showall ul {
+.showall ul li, .edit ul li{
 	list-style: none;
+	display: inline-block;
 }
 
 .local {
