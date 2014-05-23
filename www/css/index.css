@@ -26,3 +26,17 @@ html {
 	display: inline;
 	padding-right: 10px;
 }
+
+img.thumbnail {
+	width: auto;
+  	max-width: 75px;
+  	height: auto;
+  	max-height: 50px;
+}
+
+img.fullview {
+	width: auto;
+  	max-width: 150px;
+  	height: auto;
+  	max-height: 100px;
+}
