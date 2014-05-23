@@ -30,7 +30,7 @@ function makePhotoEntry() {
 		"description" : description
 	};
 
-	photose.push(photoEntry);
+	photos.push(photoEntry);
 }
 
 function saveAllPhotos() {
